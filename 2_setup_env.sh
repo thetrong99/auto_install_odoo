@@ -1,3 +1,6 @@
+#!/bin/bash
+
+#cài pyenv
 cd /tmp
 curl https://pyenv.run | bash
 cd

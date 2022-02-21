@@ -1,5 +1,8 @@
 #!/bin/bash
+
+#file conf 
 mv ~/auto_install_odoo/tsm-backend.conf /etc/
+#file service systemd
 mv ~/auto_install_odoo/backend.service /etc/systemd/system/
 
 # create file log
