@@ -8,10 +8,10 @@ sudo yum install -y python3-devel readline-devel openssl-devel libffi-devel make
 #tao tep de luu source code
 cd /tmp
 #git clone https://github.com/thetrong99/auto_install_odoo.git
-mv ~/auto_install_odoo/setup_env.sh /home/tsm
-mv ~/auto_install_odoo/set_source_code.sh /home/tsm
-chown tsm.tsm /home/tsm/setup_env.sh
-chown tsm.tsm /home/tsm/set_source_code.sh
+mv ~/auto_install_odoo/2_setup_env.sh /home/tsm
+mv ~/auto_install_odoo/3_set_source_code.sh /home/tsm
+chown tsm.tsm /home/tsm/2_setup_env.sh
+chown tsm.tsm /home/tsm/3_set_source_code.sh
 mkdir -p /opt/tsm-backend
 chown tsm.tsm /opt/tsm-backend
 unzip ~/odoo12.zip -d /opt/tsm-backend/
