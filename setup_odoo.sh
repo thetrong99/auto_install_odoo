@@ -14,6 +14,9 @@ mkdir -p /opt/tsm-backend
 chown tsm.tsm /opt/tsm-backend
 unzip ~/odoo12.zip -d /opt/tsm-backend/
 
+sed -i 's/idna==2.9/idna==2.7/' /opt/tsm-backend/odoo12/requirements.txt
+sed -i 's/urllib3==1.25.8/urllib3==1.24/' /opt/tsm-backend/odoo12/requirements.txt
+
 sleep 3
 
 
