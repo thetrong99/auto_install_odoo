@@ -8,7 +8,7 @@ sudo yum install -y python3-devel readline-devel openssl-devel libffi-devel make
 #tao tep de luu source code
 cd /tmp
 #git clone https://github.com/thetrong99/auto_install_odoo.git
-mv auto_install_odoo/setup_env.sh /home/tsm
+mv ~/auto_install_odoo/setup_env.sh /home/tsm
 chown tsm.tsm /home/tsm/setup_env.sh
 mkdir -p /opt/tsm-backend
 chown tsm.tsm /opt/tsm-backend
@@ -62,8 +62,8 @@ sudo systemctl start postgresql-13
 #exit
 
 # create file config odoo
-mv auto_install_odoo/tsm-backend.conf /etc/
-mv auto_install_odoo/backend.service /etc/systemd/system/
+mv ~/auto_install_odoo/tsm-backend.conf /etc/
+mv ~/auto_install_odoo/backend.service /etc/systemd/system/
 
 # create file log
 mkdir /var/log/backend
@@ -81,7 +81,7 @@ sudo yum install -y nginx
 systemctl start nginx
 systemctl enable nginx
 # reverse proxy
-mv auto_install_odoo/tsm_od.conf /etc/nginx/conf.d/
+mv ~/auto_install_odoo/tsm_od.conf /etc/nginx/conf.d/
 systemctl restart nginx
 
 firewall-cmd --zone=public --add-port=80/tcp --permanent
