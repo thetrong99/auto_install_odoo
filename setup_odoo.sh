@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #cai cac goi can thiet
-
+echo 'tsm    ALL=(ALL)       ALL' >> /etc/sudoers
 sudo yum install -y gcc git wget libxslt-devel bzip2-devel openldap-devel libjpeg-devel freetype-devel unzip
 sudo yum install -y python3-devel readline-devel openssl-devel libffi-devel make sqlite-devel sshpass
 
