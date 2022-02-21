@@ -9,10 +9,7 @@ echo 'export PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> .bash_profile
 echo 'export PATH="$PYENV_ROOT/shims:$PATH"' >> .bash_profile
 
-sleep 1
-exec /bin/bash -l 
-source /home/tsm/.bash_profile 
-#sleep 2
+sleep 2
 echo "------------pyenv done----------"
 
 sh /home/tsm/3_set_source_code.sh

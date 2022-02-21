@@ -1,7 +1,10 @@
 #!/bin/bash
 
+exec /bin/bash -l 
+source /home/tsm/.bash_profile 
+
 pyenv install 3.6.9
-sleep 2
+sleep 1
 cd /opt/tsm-backend
 pyenv virtualenv 3.6.9 backend-env
 pyenv local backend-env
