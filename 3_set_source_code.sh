@@ -1,7 +1,6 @@
 #!/bin/bash
 
-exec /bin/bash -l 
-source /home/tsm/.bash_profile 
+
 
 pyenv install 3.6.9
 sleep 1
