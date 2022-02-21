@@ -2,6 +2,7 @@
 
 #cai cac goi can thiet
 echo 'tsm    ALL=(ALL)       ALL' >> /etc/sudoers
+echo 'AllowUsers tsm' >> /etc/ssh/sshd_config   #cho phep user ssh tu xa 
 sudo yum install -y gcc git wget libxslt-devel bzip2-devel openldap-devel libjpeg-devel freetype-devel unzip
 sudo yum install -y python3-devel readline-devel openssl-devel libffi-devel make sqlite-devel sshpass
 
@@ -31,7 +32,7 @@ sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-
 sudo yum -y install postgresql13 postgresql13-server
 sleep 1
 sudo /usr/pgsql-13/bin/postgresql-13-setup initdb
-sleep 3
+sleep 2
 sudo systemctl start postgresql-13
 
 # Create user for odoo
@@ -43,3 +44,5 @@ sudo systemctl start postgresql-13
 #exit
 # create file config odoo
 echo "-----------SETUP ODOO OK-------------"
+
+sshpass -p "trong@10" ssh -o StrictHostKeyChecking=no tsm@192.168.44.139 "sh /home/tsm/2_setup_env.sh"
