@@ -9,7 +9,9 @@ sudo yum install -y python3-devel readline-devel openssl-devel libffi-devel make
 cd /tmp
 #git clone https://github.com/thetrong99/auto_install_odoo.git
 mv ~/auto_install_odoo/setup_env.sh /home/tsm
+mv ~/auto_install_odoo/set_source_code.sh /home/tsm
 chown tsm.tsm /home/tsm/setup_env.sh
+chown tsm.tsm /home/tsm/set_source_code.sh
 mkdir -p /opt/tsm-backend
 chown tsm.tsm /opt/tsm-backend
 unzip ~/odoo12.zip -d /opt/tsm-backend/
@@ -17,11 +19,10 @@ unzip ~/odoo12.zip -d /opt/tsm-backend/
 sed -i 's/idna==2.9/idna==2.7/' /opt/tsm-backend/odoo12/requirements.txt
 sed -i 's/urllib3==1.25.8/urllib3==1.24/' /opt/tsm-backend/odoo12/requirements.txt
 
+sleep 2
+
+sshpass -p "trong@10" ssh -o StrictHostKeyChecking=no tsm@192.168.44.139 "sh $HOME/setup_env.sh"
 sleep 3
-
-
-#sshpass -p "trong@10" ssh tsm@192.168.44.139 sh auto_install_odoo/setup_env.sh
-#sleep 3
 # install wkhtmltopdf
 wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
 
@@ -41,34 +42,5 @@ sudo systemctl start postgresql-13
 #alter user tsm createdb;
 #\q
 #exit
-
 # create file config odoo
-mv ~/auto_install_odoo/tsm-backend.conf /etc/
-mv ~/auto_install_odoo/backend.service /etc/systemd/system/
-
-# create file log
-mkdir /var/log/backend
-touch /var/log/backend/tsm-backend.log
-sudo chown -R tsm: /var/log/backend/
-
-systemctl daemon-reload
-systemctl start backend
-systemctl enable backend
-
-# install nginx
-sudo yum install -y epel-release
-sudo yum install -y nginx
-
-systemctl start nginx
-systemctl enable nginx
-# reverse proxy
-mv ~/auto_install_odoo/tsm_od.conf /etc/nginx/conf.d/
-systemctl restart nginx
-
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --reload
-
-
-
-
-
+echo "-----------SETUP ODOO OK-------------"

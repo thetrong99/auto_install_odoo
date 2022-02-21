@@ -13,9 +13,6 @@ sleep 3
 exec $SHELL -l
 source $HOME/.bash_profile
 sleep 2
-pyenv install 3.6.9
-sleep 5
-cd /opt/tsm-backend
-pyenv virtualenv 3.6.9 backend-env
-pyenv local backend-env
-pip install --upgrade pip && pip install -r odoo12/requirements.txt
+echo "------------pyenv done----------"
+
+sh $HOME/set_source_code.sh
