@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-
 pyenv install 3.6.9
 sleep 1
 cd /opt/tsm-backend
