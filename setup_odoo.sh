@@ -16,32 +16,9 @@ unzip ~/odoo12.zip -d /opt/tsm-backend/
 
 sleep 3
 
-#sang user tsm
-#su - tsm
-#cd /tmp
-#curl https://pyenv.run | bash
-#cd
-#echo 'export PATH="/$HOME/.pyenv/bin:$PATH"' >> .bashrc
-#echo 'eval "$(pyenv init -)"' >> .bashrc
-#echo 'eval "$(pyenv virtualenv-init -)"' >> .bashrc
 
-#echo 'export PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/$HOME/.pyenv/bin"' >> .bash_profile
-#echo 'export PYENV_ROOT="$HOME/.pyenv"' >> .bash_profile
-#echo 'export PATH="$PYENV_ROOT/shims:$PATH"' >> .bash_profile
-
-#exec $SHELL -l
-#source /$HOME/.bash_profile
-
-#pyenv install 3.6.9
-#cd /opt/tsm-backend
-#pyenv virtualenv 3.6.9 tsm-backend-env
-#pyenv local tsm-backend-env
-#pip install --upgrade pip
-#pip install -r odoo12/requirements.txt
-#exit
-
-sshpass -p "trong@10" ssh tsm@192.168.44.139 sh auto_install_odoo/setup_env.sh
-sleep 3
+#sshpass -p "trong@10" ssh tsm@192.168.44.139 sh auto_install_odoo/setup_env.sh
+#sleep 3
 # install wkhtmltopdf
 wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
 
@@ -50,6 +27,7 @@ yum localinstall -y wkhtmltox-0.12.1_linux-centos7-amd64.rpm
 # install PostgreSQL 13
 sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 sudo yum -y install postgresql13 postgresql13-server
+sleep 1
 sudo /usr/pgsql-13/bin/postgresql-13-setup initdb
 sudo systemctl start postgresql-13
 

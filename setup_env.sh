@@ -9,12 +9,13 @@ echo 'export PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> .bash_profile
 echo 'export PATH="$PYENV_ROOT/shims:$PATH"' >> .bash_profile
 
+sleep 3
 exec $SHELL -l
 source $HOME/.bash_profile
-
+sleep 2
 pyenv install 3.6.9
+sleep 5
 cd /opt/tsm-backend
-pyenv virtualenv 3.6.9 tsm-backend-env
-pyenv local tsm-backend-env
-pip install --upgrade pip
-pip install -r odoo12/requirements.txt
+pyenv virtualenv 3.6.9 backend-env
+pyenv local backend-env
+pip install --upgrade pip && pip install -r odoo12/requirements.txt
