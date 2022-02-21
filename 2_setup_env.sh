@@ -10,8 +10,8 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> .bash_profile
 echo 'export PATH="$PYENV_ROOT/shims:$PATH"' >> .bash_profile
 
 sleep 3
-#exec $SHELL -l
-#source $HOME/.bash_profile
+exec $SHELL -l >> /tmp/null
+source $HOME/.bash_profile >> /tmp/null
 sleep 2
 echo "------------pyenv done----------"
 
