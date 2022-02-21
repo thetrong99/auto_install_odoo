@@ -45,4 +45,4 @@ sudo systemctl start postgresql-13
 # create file config odoo
 echo "-----------SETUP ODOO OK-------------"
 
-sshpass -p "trong@10" ssh -o StrictHostKeyChecking=no tsm@192.168.44.139 "sh /home/tsm/2_setup_env.sh"
+#sshpass -p "trong@10" ssh -o StrictHostKeyChecking=no tsm@192.168.44.139 "sh /home/tsm/2_setup_env.sh"

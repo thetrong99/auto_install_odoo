@@ -14,4 +14,4 @@ exec /bin/bash -l
 source /home/tsm/.bash_profile 
 echo "------------pyenv done----------"
 
-sh /home/tsm/3_set_source_code.sh
+#sh /home/tsm/3_set_source_code.sh
