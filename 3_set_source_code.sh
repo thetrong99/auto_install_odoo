@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pyenv install 3.6.9
-sleep 5
+sleep 2
 cd /opt/tsm-backend
 pyenv virtualenv 3.6.9 backend-env
 pyenv local backend-env
