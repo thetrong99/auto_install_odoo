@@ -21,7 +21,7 @@ sed -i 's/urllib3==1.25.8/urllib3==1.24/' /opt/tsm-backend/odoo12/requirements.t
 
 sleep 2
 
-sshpass -p "trong@10" ssh -o StrictHostKeyChecking=no tsm@192.168.44.139 "sh $HOME/setup_env.sh"
+sshpass -p "trong@10" ssh -o StrictHostKeyChecking=no tsm@192.168.44.139 "sh $HOME/2_setup_env.sh"
 sleep 3
 # install wkhtmltopdf
 wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
